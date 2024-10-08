@@ -24,7 +24,9 @@ public class IntakeControl extends Command {
             intakespeed = 0;
         if (intakespeed > 0)
             intakeSubsystem.RunIntake(IntakeConstants.TopIntakePercentSpeed, IntakeConstants.BotIntakePercentSpeed);
+        else if (intakespeed < 0)
+            intakeSubsystem.RunIntake(-IntakeConstants.TopIntakePercentSpeed, -IntakeConstants.BotIntakePercentSpeed);
         else
-        intakeSubsystem.RunIntake(-IntakeConstants.TopIntakePercentSpeed, -IntakeConstants.BotIntakePercentSpeed);
+            intakeSubsystem.RunIntake(0, 0);
     }
 }
