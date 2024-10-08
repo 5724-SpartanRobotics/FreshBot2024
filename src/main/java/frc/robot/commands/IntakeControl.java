@@ -12,6 +12,7 @@ public class IntakeControl extends Command {
     public IntakeControl(XboxController operator, Intake inSubsystem){
         operatorController = operator;
         intakeSubsystem = inSubsystem;
+        addRequirements(inSubsystem);
     }
 
     @Override
