@@ -48,33 +48,11 @@ public class Constant {
 
         public static final double speakerDistance = 6;
     }
-    public static final class ArmConstants{
-        public static final int ClawMotor = 12;
-        public static final int WormMotor = 17;
-        public static final double ClawMaxPercent = 0.35;
-        public static final int claw_ConeStallCurLimitAmps = 50;
-        public static final int claw_CubeStallCurLimitAmps = 50;
-
-        //gear ratio is 4 and the worm gear motion isn't linear. one turn at the bottom has more arm angle
-        //than a turn at the top. The desired max position determined imperically was 110 motor rotations
-        // so we made this ration 7.33, 
-        public static final double WormMotorRotationsPerInch = 7.33;
-        public static final double WormPositionMax = 15.3;//inches of rod
-        public static final double WormPositionMin = 0;//inches of rod
-        public static final double WormPositionIntake = 2.59; //inches of rod
-        public static final double WormMidRung = 12.6;
-        public static final double WormFunkyConeDrop = 15.3;
-        public static final double WormPositionIncrement = 1.1;
-        public static final double WormPositionPlaceConeIncrement = 2.5;//This is used to decrement or increment by a cone placement amount.
-        
-        public static final double ExtendMotorRotationsPerInch = 3.8197;//Spool size is 1" circumfrence is pi, therefore 1/pi spool rotations = 1 inch. Gear box is 12:1.
-        public static final int ExtendMotor = 13;
-        public static final double ExtendPositionMax = 20; //inches
-        public static final double ExtendPositionIntake = 7.64;
-        public static final double ExtendPositionMin = 0; //inches
-        public static final double ExtendMidRung = 7.07;
-        public static final double ExtendFunkyConeDrop = 18;
-        public static final double ExtendPositionIncrement = 1.5; //inches
+    public static final class IntakeConstants{
+        public static final int TopMotorCanId = 38;
+        public static final int BottomBeltsMotorCanId = 15;
+        public static final double TopIntakePercentSpeed = 1.0;
+        public static final double BotIntakePercentSpeed = 0.8;
     }
     public static final class ControllerConstants{
         public static double joystickDeadband = 0.1;//a deadband that you must overcome for the joystick input, otherwise we send 0

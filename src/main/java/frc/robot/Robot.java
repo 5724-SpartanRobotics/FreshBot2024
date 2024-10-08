@@ -12,6 +12,8 @@ import frc.robot.commands.VisionSubsystem;
 import edu.wpi.first.wpilibj.Timer;
 import frc.robot.Subsystems.DriveTrainSubsystem;
 import frc.robot.Subsystems.Field;
+import frc.robot.Subsystems.Intake;
+import frc.robot.commands.IntakeControl;
 import frc.robot.commands.TeleopSwerve;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -52,6 +54,7 @@ public class Robot extends TimedRobot {
   private XboxController drivestick = new XboxController (0);
   private XboxController operator = new XboxController(1);
   private double[] dummyArray = new double[1];
+  private Intake intakeSubSystem = new Intake();
 
 
 
@@ -72,6 +75,7 @@ public class Robot extends TimedRobot {
     drive.setDefaultCommand(new TeleopSwerve(drive, drivestick));
     // TODO this is bad and should not be here fix it its for debugging etc etc etc
     
+    intakeSubSystem.setDefaultCommand(new IntakeControl(operator, intakeSubSystem));
 
 
     SmartDashboard.putNumber("setpos", 0);
