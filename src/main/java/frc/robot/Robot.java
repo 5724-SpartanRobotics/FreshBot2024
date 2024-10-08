@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.VisionSubsystem;
 import edu.wpi.first.wpilibj.Timer;
-import frc.robot.Subsystems.DriveTrainSubsystemRick;
+import frc.robot.Subsystems.DriveTrainSubsystem;
 import frc.robot.Subsystems.Field;
 import frc.robot.commands.TeleopSwerve;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -35,7 +35,7 @@ public class Robot extends TimedRobot {
   private Command m_autoSelected;
   private final SendableChooser<Command> m_chooser = new SendableChooser<>();
   //private DriveTrainSubsystem drive;
-  private DriveTrainSubsystemRick drive;
+  private DriveTrainSubsystem drive;
   private VisionSubsystem vision;
   private Field field = new Field(drive);
 
@@ -63,7 +63,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     tagTime.restart();
-    drive = new DriveTrainSubsystemRick();
+    drive = new DriveTrainSubsystem();
     poseFinder = 0;
     CameraServer.startAutomaticCapture();
     UsbCamera cam2 = CameraServer.startAutomaticCapture();

@@ -12,7 +12,7 @@ public class Field {
     private double targetX;
     private double targetY;
     private double targetRot;
-    private DriveTrainSubsystemRick drive;
+    private DriveTrainSubsystem drive;
     private double desiredZ;
     private double zDif = 0;
     private double turnAccuracy = 10;
@@ -27,7 +27,7 @@ public class Field {
     private double moveY = 0;
     private double[] retArray = new double[3];
 
-    public Field(DriveTrainSubsystemRick d) {
+    public Field(DriveTrainSubsystem d) {
         drive = d;
         tagX = new double[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
         tagY = new double[]{0, 0, 0, 0, 0, 0, 0, 0, 0};

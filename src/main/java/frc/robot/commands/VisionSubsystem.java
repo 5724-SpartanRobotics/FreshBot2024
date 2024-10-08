@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Subsystems.DriveTrainInterface;
-import frc.robot.Subsystems.DriveTrainSubsystemRick;
+import frc.robot.Subsystems.DriveTrainSubsystem;
 import frc.robot.Subsystems.Constant.ControllerConstants;
 import frc.robot.Subsystems.Constant.DebugLevel;
 import frc.robot.Subsystems.Constant.DebugSetting;
@@ -20,7 +20,7 @@ import frc.robot.Util.Conversions;
 
 public class VisionSubsystem extends SubsystemBase {
     private XboxController controller;
-    private DriveTrainSubsystemRick swerveDrive;
+    private DriveTrainSubsystem swerveDrive;
     private double[] tag;
     private double[] defaultTag = {-1, -1};
 
@@ -29,7 +29,7 @@ public class VisionSubsystem extends SubsystemBase {
      * @param swerveDrive The drive train subsystem
      * @param controller A joystick
      */
-    public VisionSubsystem(DriveTrainSubsystemRick swerveDrive, XboxController controller){
+    public VisionSubsystem(DriveTrainSubsystem swerveDrive, XboxController controller){
         this.controller = controller;
         this.swerveDrive = swerveDrive;
     }

@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Subsystems.DriveTrainInterface;
-import frc.robot.Subsystems.DriveTrainSubsystemRick;
+import frc.robot.Subsystems.DriveTrainSubsystem;
 import frc.robot.Subsystems.Constant.ControllerConstants;
 import frc.robot.Subsystems.Constant.DebugLevel;
 import frc.robot.Subsystems.Constant.DebugSetting;
@@ -17,14 +17,14 @@ import frc.robot.Subsystems.Constant.DriveConstants;
 
 public class TeleopSwerve extends Command {
     private XboxController controller;
-    private DriveTrainSubsystemRick swerveDrive;
+    private DriveTrainSubsystem swerveDrive;
 
     /**
      * Drive Controller
      * @param swerveDrive The drive train subsystem
      * @param drivestick A joystick
      */
-    public TeleopSwerve(DriveTrainSubsystemRick swerveDrive, XboxController drivestick){
+    public TeleopSwerve(DriveTrainSubsystem swerveDrive, XboxController drivestick){
         this.controller = drivestick;
         this.swerveDrive = swerveDrive;
         addRequirements((SubsystemBase)swerveDrive);
