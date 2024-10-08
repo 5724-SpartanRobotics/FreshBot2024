@@ -7,20 +7,20 @@ import frc.robot.Util.Conversions;
 public class Constant {
     public static final class DriveConstants {
         public static final double LFOff = 0.245 * Conversions.twoPi;//CANCoder offset in radians
-        public static final int LFTurnMotor = 17;
-        public static final int LFDriveMotor = 9;
+        public static final int LFTurnMotor = 11;
+        public static final int LFDriveMotor = 20;
         public static final int LFCanID = 61;
         public static final double RFOff = 0.271 * Conversions.twoPi;
-        public static final int RFTurnMotor = 18;
-        public static final int RFDriveMotor = 13;
+        public static final int RFTurnMotor = 15;
+        public static final int RFDriveMotor = 12;
         public static final int RFCanID = 62;
         public static final double LBOff = -0.189 * Conversions.twoPi;
-        public static final int LBTurnMotor = 12;
-        public static final int LBDriveMotor = 11;
+        public static final int LBTurnMotor = 19;
+        public static final int LBDriveMotor = 17;
         public static final int LBCanID = 60;
         public static final double RBOff = 0.454 * Conversions.twoPi;
-        public static final int RBTurnMotor = 15;
-        public static final int RBDriveMotor = 20;
+        public static final int RBTurnMotor = 9;
+        public static final int RBDriveMotor = 13;
         public static final int RBCanID = 59;
         public static final double trackWidth = Units.inchesToMeters(24.0);//wheel center to center width
         public static final double wheelBase = Units.inchesToMeters(25.0);//wheel center to center front / back distance
