@@ -20,7 +20,7 @@ public class Intake extends SubsystemBase{
         intakeTop.setNeutralMode(NeutralMode.Brake);
         intakeBot.setNeutralMode(NeutralMode.Brake);
 
-        intakeBot.setInverted(true);
+        intakeTop.setInverted(false);
     }
 
     public void RunIntake(double topspeed, double bottomspeed)
