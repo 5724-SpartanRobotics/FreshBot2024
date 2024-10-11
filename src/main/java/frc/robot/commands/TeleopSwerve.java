@@ -67,7 +67,7 @@ public class TeleopSwerve extends Command {
             }
             zAxis = -controller.getRightX() / 2;
         
-            if(controller.getRawButton(7)) {
+            if(controller.getAButton()) {
                 swerveDrive.setGyroZero();
             }
         // Power Array Auto Align Code
