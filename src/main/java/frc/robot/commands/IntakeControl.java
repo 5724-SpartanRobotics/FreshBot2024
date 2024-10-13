@@ -17,7 +17,7 @@ public class IntakeControl extends Command {
 
     @Override
     public void execute(){
-        double deadband = 0.1;
+        double deadband = 0.2;
         double intakespeed = operatorController.getLeftY();
         if (intakespeed < deadband && intakespeed > 0)
             intakespeed = 0;
