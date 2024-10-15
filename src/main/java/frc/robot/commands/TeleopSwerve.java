@@ -38,9 +38,8 @@ public class TeleopSwerve extends Command {
 
     @Override
     public void execute(){
+        super.execute();
         if (DriverStation.isAutonomous()){
-            return;
-        } else if (controller.getAButton()) {
             return;
         } else {
             double xAxis;
