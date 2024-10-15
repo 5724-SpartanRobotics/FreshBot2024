@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.Timer;
 import frc.robot.Subsystems.DriveTrainSubsystem;
 import frc.robot.Subsystems.Field;
 import frc.robot.Subsystems.Intake;
+import frc.robot.commands.AutoCommand;
 import frc.robot.commands.IntakeControl;
 import frc.robot.commands.TeleopSwerve;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -32,8 +33,6 @@ public class Robot extends TimedRobot {
   private double selectionPhase;
   private double poseFinder;
   private boolean wasAutoFlag;
-  private static final String kDefaultAuto = "Default";
-  private static final String kCustomAuto = "My Auto";
   private Command m_autoSelected;
   private final SendableChooser<Command> m_chooser = new SendableChooser<>();
   //private DriveTrainSubsystem drive;
@@ -55,6 +54,8 @@ public class Robot extends TimedRobot {
   private XboxController operator = new XboxController(1);
   private double[] dummyArray = new double[1];
   private Intake intakeSubSystem = new Intake();
+
+  private Command _AutoCommand;
 
 
 
@@ -85,6 +86,10 @@ public class Robot extends TimedRobot {
       
     //  }, drive));
     selectionPhase = 0;
+    _AutoCommand = new AutoCommand(drive);
+  //  _AutoCommand.initialize();
+    m_chooser.addOption("SimpleAuto", _AutoCommand);
+    SmartDashboard.putData("Auto Choices", m_chooser);
   }
 
   /**
@@ -124,15 +129,20 @@ public class Robot extends TimedRobot {
     m_autoSelected = m_chooser.getSelected();
     // m_autoSelected = SmartDashboard.getString("Auto Selector", kDefaultAuto);
     //System.out.println("Auto selected: " + m_autoSelected);
-    m_chooser.getSelected().schedule();
-    CommandScheduler.getInstance().run();
+    if (m_autoSelected != null)
+      m_autoSelected.schedule();
+//    _AutoCommand.schedule();
   }
 
-  /** This function is called periodically during autonomous. */
+  /** This function is called periodically 
+   *  autonomous. */
   @Override
   public void autonomousPeriodic() {
     // field.setTarget(0, 0, 0);
     // field.update();
+    //_AutoCommand.execute();
+//    if (m_autoSelected != null)
+  //    m_autoSelected.execute();
   }
 
   /** This function is called once when teleop is enabled. */
@@ -141,6 +151,8 @@ public class Robot extends TimedRobot {
     if(wasAutoFlag) {
       wasAutoFlag = false;
     }
+    if (_AutoCommand != null)
+    _AutoCommand.cancel();
   }
 
   /** This function is called periodically during operator control. */

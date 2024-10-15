@@ -9,7 +9,6 @@ import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.wpilibj.ADIS16448_IMU;
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.simulation.ADXRS450_GyroSim;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -124,6 +123,11 @@ public class DriveTrainSubsystem extends SubsystemBase implements DriveTrainInte
 
         public void flipGyro() {
             //gyro.setYaw(180);
+        }
+
+        public void driveForAuto(Translation2d translation, double rotation)
+        {
+            drive(translation, rotation);
         }
 
         public void drive(Translation2d translation, double rotation){
