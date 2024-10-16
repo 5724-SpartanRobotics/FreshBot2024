@@ -89,6 +89,7 @@ public class Robot extends TimedRobot {
     _AutoCommand = new AutoCommand(drive);
   //  _AutoCommand.initialize();
     m_chooser.addOption("SimpleAuto", _AutoCommand);
+    m_chooser.setDefaultOption("SimpleAuto", _AutoCommand);
     SmartDashboard.putData("Auto Choices", m_chooser);
   }
 
