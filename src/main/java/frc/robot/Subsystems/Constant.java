@@ -51,7 +51,7 @@ public class Constant {
     public static final class IntakeConstants{
         public static final int TopMotorCanId = 38;
         public static final int BottomBeltsMotorCanId = 15;
-        public static final int TopSecondaryCanId = 1;
+        public static final int TopSecondaryCanId = 18;
         public static final double TopIntakePercentSpeed = 1.0;
         public static final double BotIntakePercentSpeed = 0.8;
         public static final double TopSecondaryPercentSpeedMult = 0.5;
