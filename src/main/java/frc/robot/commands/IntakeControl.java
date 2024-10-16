@@ -29,5 +29,7 @@ public class IntakeControl extends Command {
             intakeSubsystem.RunIntake(-IntakeConstants.TopIntakePercentSpeed, -IntakeConstants.BotIntakePercentSpeed);
         else
             intakeSubsystem.RunIntake(0, 0);
+        double topIntakeSpeed = operatorController.getRightY();
+        intakeSubsystem.RunTopIntake(topIntakeSpeed*IntakeConstants.TopSecondaryPercentSpeedMult);
     }
 }
