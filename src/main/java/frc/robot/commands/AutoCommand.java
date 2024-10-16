@@ -14,8 +14,8 @@ public class AutoCommand extends SequentialCommandGroup {
     {
         _DriveTrain = driveTrain;
         addCommands(
-            new InstantCommand(() -> _DriveTrain.driveForAuto(new Translation2d(0, -0.3), 0), _DriveTrain),
-            new WaitCommand(2),
+            new InstantCommand(() -> _DriveTrain.driveForAuto(new Translation2d(-0.9, 0), 0), _DriveTrain),
+            new WaitCommand(4),
             new RunCommand(() -> _DriveTrain.driveForAuto(new Translation2d(0, 0), 0), _DriveTrain)
         );
     }
